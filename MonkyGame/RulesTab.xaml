@@ -1,0 +1,20 @@
+﻿<Window x:Class="MonkyGame.RulesTab"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MonkyGame"
+        mc:Ignorable="d"
+        Title="RulesTab" Height="500" Width="450">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="488" VerticalAlignment="Top" Width="456" Source="/Rules.png"/>
+        <Button Content="Return to window" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Center" Width="110" Height="45" 
+                Background="#FFB1EFA0" BorderThickness="4" BorderBrush="#FF3C821D" Click="Return_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

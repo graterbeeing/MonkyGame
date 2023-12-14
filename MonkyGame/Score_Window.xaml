@@ -1,0 +1,31 @@
+﻿<Window x:Class="MonkyGame.Score_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MonkyGame"
+        mc:Ignorable="d"
+        Title="Score_Window" Height="350" Width="430">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Left" Height="313" VerticalAlignment="Center" Width="420"  
+           Source="C:\Users\OZ\OneDrive\מסמכים\C# 2022\repose\MonkyGame\MonkyGame\chalkboard.png" Grid.RowSpan="3"/>
+        <Label Content="The big reveal" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Ink Free" FontSize="25" Foreground="White"  />
+        <Label x:Name="test" Content="Label" HorizontalAlignment="Center" Margin="0,34,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" FontFamily="Ink Free" FontSize="18"/>
+        <Button Content="Close the Window" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="15" Height="45" 
+            Width="140" BorderThickness="4" Background="#FF57A9CC" BorderBrush="#FF0E7936" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,47 @@
+﻿<Window x:Class="MonkyGame.MainWindow"
+        x:Name="HomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MonkyGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Width="200" Source="/monkyToRight.png" />
+        <Image HorizontalAlignment="Center" Height="400" VerticalAlignment="Center" Width="500" Grid.Column="1" Source="/chalkboard.png"  />
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="60,65">
+            <RadioButton Content="addition" GroupName="QuestionType" FontSize="19" FontFamily="Ink Free" Foreground="White" Checked="Add_Check"/>
+            <RadioButton Content="subtraction" GroupName="QuestionType" FontSize="19" FontFamily="Ink Free" Foreground="White" Checked="Sub_Check"/>
+            <RadioButton Content="multiplication" GroupName="QuestionType" FontSize="19" FontFamily="Ink Free" Foreground="White" Checked="Mult_Check"/>
+            <RadioButton Content="deviding" GroupName="QuestionType" FontSize="19" FontFamily="Ink Free" Foreground="White" Checked="Dev_Check"/>
+        </StackPanel>
+        <Label Grid.Column="1" Content="Magic in numbers" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" 
+               FontFamily="Ink Free" Foreground="White" FontSize="35" FontWeight="Bold"/>
+        <Button Grid.Column="1" Content="Rules" HorizontalAlignment="Left" Margin="133,0,0,0" VerticalAlignment="Center" 
+                Width="100" Height="45" BorderThickness="4,4,4,4" BorderBrush="SaddleBrown" Click="Rules_Open">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Grid.Column="1" Content="Play" HorizontalAlignment="Left" Margin="303,0,0,0" VerticalAlignment="Center" 
+                Width="100" Height="45" BorderThickness="4,4,4,4" BorderBrush="SaddleBrown" Click="Game_Open">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="12"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label x:Name="Score" Grid.Column="1" Content="your score:" HorizontalAlignment="Center" Margin="0,279,0,0" VerticalAlignment="Top" Foreground="White" Visibility="Collapsed"/>
+
+
+
+    </Grid>
+
+</Window>
