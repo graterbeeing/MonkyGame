@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +31,11 @@ namespace MonkyGame
                 case 0:
                     return "+";
                 case 1:
-                    break;
+                    return "-";
+                case 2:
+                    return "*";
+                case 3:
+                    return "/";
                 //...
             }
             return "+";
@@ -41,7 +45,22 @@ namespace MonkyGame
         {
             int answer = int.Parse(answerTxt);
             // it would have a switch statment if we had more than one oporator
-            return answer == num1+num2;
+            switch (type)
+            {
+                case 0:
+                    return answer == num1 + num2;
+                case 1:
+                    return answer == num2 - num1;
+                case 2:
+                    return answer == num1 * num2;
+                case 3:
+                    if(num1 != 0 && num2 != 0)
+                    {
+                        return answer == num1 / num2;
+                    }
+                    return true; //noooooooooooooooooooooooooooooo
+            }
+            return false;
         }
 
         public void SetType(int type)
