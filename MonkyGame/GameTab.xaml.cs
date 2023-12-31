@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +23,13 @@ namespace MonkyGame
         private Window other;
         private int countright = 0;
         private int countAnswered = 0;
+        private int type;
         public GameTab(int type, Window other)
         {
             InitializeComponent();
             this.game = new Game(type);
             this.other = other;
+            this.type = type;
             oporator.Text = game.CreateOporator();
             game.CreateNumbers();
             number1.Text = game.GetNum1().ToString();
@@ -79,7 +81,21 @@ namespace MonkyGame
         {
             hanging.Visibility = Visibility.Visible;
             HintLable.Visibility = Visibility.Visible;
-            HintLable.Text = $"what happens when you buy {game.GetNum1()} bananas and than anoher {game.GetNum2()} bananas?";
+            switch (type)
+            {
+                case 0:
+                    HintLable.Text = $"what happens when you buy {game.GetNum1()} bananas and than anoher {game.GetNum2()} bananas?";
+                    break;
+                case 1:
+                    HintLable.Text = $"What happens when you have {game.GetNum1()} bananas and someone takes from you {game.GetNum2()} bananas?";
+                    break;
+                case 2:
+                    HintLable.Text = $"what happens when you buy {game.GetNum1()} bananas {game.GetNum2()} times?";
+                    break;
+                case 3:
+                    HintLable.Text = $"how many boxes of {game.GetNum2()} bananas can you fill if you have {game.GetNum1()} bananas?";
+                    break;
+            }
         }
 
         private void Hint_collaps()
